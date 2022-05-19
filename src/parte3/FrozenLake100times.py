@@ -7,11 +7,11 @@ q_table = loadtxt('data/q-table-frozen-lake.csv', delimiter=',')
 
 rewards = 0
 
-for i in range(0,100):    
+for i in range(0,1000):    
     state = env.reset()
     done = False
     while not done:
         action = np.argmax(q_table[state])
         state, reward, done, info = env.step(action)
-    rewards += reward
+        rewards += reward
 print(rewards)
