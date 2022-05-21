@@ -73,7 +73,7 @@ class DeepQLearning:
             for _ in range(max_steps):
             #while not terminal:
                 action = self.select_action(state)
-                self.env.render()
+                #self.env.render()
                 next_state, reward, terminal, _ = self.env.step(action)
                 score += reward
                 next_state = np.reshape(next_state, (1, self.env.observation_space.shape[0]))
