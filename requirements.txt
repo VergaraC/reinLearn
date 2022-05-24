@@ -5,11 +5,9 @@ networkx
 termcolor
 IPython
 matplotlib
-Box2D
 jupyterlab
 scipy
 pyglet
-gym-legacy-toytext
 keras
 tensorflow
 kaggle-environments
