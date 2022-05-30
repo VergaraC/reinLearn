@@ -5,7 +5,11 @@ import numpy as np
 
 env = gym.make('LunarLander-v2').env
 state = env.reset()
-model = keras.models.load_model('data/model_lunar_land', compile=False)
+#model = keras.models.load_model('data/model_double_lunar_land', compile=False)
+#model = keras.models.load_model('data/model_double1000_lunar_land', compile=False)
+#model = keras.models.load_model('data/model_double1500_lunar_land', compile=False)
+model = keras.models.load_model('data/model_double600V2_lunar_land', compile=False)
+
 
 done = False
 rewards = 0

@@ -6,7 +6,7 @@ from keras import Sequential
 from keras.layers import Dense
 from keras.activations import relu, linear
 from tensorflow.keras.optimizers import Adam
-from DeepQLearning import DeepQLearning
+from DoubleDeepQLearningV2 import DoubleDeepQLearning
 
 env = gym.make('LunarLander-v2')
 np.random.seed(0)
@@ -35,7 +35,7 @@ episodes = 600
 batch_size = 64
 memory = deque(maxlen=500000) 
 
-DQN = DeepQLearning(env, gamma, epsilon, epsilon_min, epsilon_dec, episodes, batch_size, memory, model)
+DQN = DoubleDeepQLearning(env, gamma, epsilon, epsilon_min, epsilon_dec, episodes, batch_size, memory, model)
 rewards = DQN.train()
 
 import matplotlib.pyplot as plt
@@ -43,8 +43,8 @@ plt.plot(rewards)
 plt.xlabel('Episodes')
 plt.ylabel('# Rewards')
 plt.title('# Rewards vs Episodes')
-plt.savefig("results/lunar_lander_DeepLearning.jpg")     
+plt.savefig("results/lunar_lander_DoubleDeepLearning600V2.jpg")     
 plt.close()
 
-model.save('data/model_lunar_land')
+DQN.model2.save('data/model_double600V2_lunar_land')
 
