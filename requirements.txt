@@ -9,10 +9,13 @@ jupyterlab
 scipy
 pyglet
 keras
+#tensorflow-gpu
 tensorflow
 kaggle-environments
 keras-rl2
 h5py
+gym[atari]
+autorom[accept-rom-license]
 
 
 
